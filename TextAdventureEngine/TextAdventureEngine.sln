@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventureEngine", "TextAdventureEngine\TextAdventureEngine.csproj", "{1368C0CD-FC6F-40EA-A692-8389574E05F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventureExample", "TextAdventureExample\TextAdventureExample.csproj", "{08E30D17-4D0E-4104-8AD0-636D2F7CBF2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1368C0CD-FC6F-40EA-A692-8389574E05F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1368C0CD-FC6F-40EA-A692-8389574E05F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1368C0CD-FC6F-40EA-A692-8389574E05F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1368C0CD-FC6F-40EA-A692-8389574E05F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08E30D17-4D0E-4104-8AD0-636D2F7CBF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08E30D17-4D0E-4104-8AD0-636D2F7CBF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08E30D17-4D0E-4104-8AD0-636D2F7CBF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08E30D17-4D0E-4104-8AD0-636D2F7CBF2C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B3E4BC4-97C2-491F-BE04-98236A8C6C7C}
+	EndGlobalSection
+EndGlobal
