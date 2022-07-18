@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventureEngine", "TextAdventureEngine\TextAdventureEngine.csproj", "{1368C0CD-FC6F-40EA-A692-8389574E05F1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAdventureExample", "TextAdventureExample\TextAdventureExample.csproj", "{08E30D17-4D0E-4104-8AD0-636D2F7CBF2C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1368C0CD-FC6F-40EA-A692-8389574E05F1} = {1368C0CD-FC6F-40EA-A692-8389574E05F1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextAdventureEngine\TextAdventureEngine.csproj">
+      <Project>{1368c0cd-fc6f-40ea-a692-8389574e05f1}</Project>
+      <Name>TextAdventureEngine</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
