@@ -1,0 +1,42 @@
+<GameState id = 0>
+    <Options>
+        <item>option 1</item>
+        <item>option 2</item>
+        <item>option 3</item>
+        <item>option 4</item>
+    </Options>
+    <LinkedGameStates>
+        <item>gamestate1</item>
+        <item>gamestate2</item>
+        <item>gamestate3</item>
+        <item>gamestate4</item>
+    </LinkedGameStates>
+</GameState>
+<GameState id = 1>
+    <Options>
+        <item>option 1</item>
+        <item>option 2</item>
+        <item>option 3</item>
+        <item>option 4</item>
+    </Options>
+    <LinkedGameStates>
+        <item>gamestate2</item>
+        <item>gamestate5</item>
+        <item>gamestate7</item>
+        <item>gamestate8</item>
+    </LinkedGameStates>
+</GameState>
+<GameState id = 2>
+    <Options>
+        <item>option 1</item>
+        <item>option 2</item>
+        <item>option 3</item>
+        <item>option 4</item>
+    </Options>
+    <LinkedGameStates>
+        <item>gamestate1</item>
+        <item>gamestate2</item>
+        <item>gamestate3</item>
+        <item>gamestate4</item>
+    </LinkedGameStates>
+</GameState>
