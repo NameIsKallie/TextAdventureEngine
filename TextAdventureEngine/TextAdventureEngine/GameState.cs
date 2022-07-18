@@ -13,7 +13,7 @@ namespace TAEngine
         {
             this.options = options;
         }
-
+        
         private int id;
         private List<string> options;
         private List<GameState> gameStates;
@@ -21,6 +21,9 @@ namespace TAEngine
         public int PromptForChoiceFromOptions()
         {
             return CIO.PromptForMenuSelection(options, false);
+            
         }
+
+
     }
 }
