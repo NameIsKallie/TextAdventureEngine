@@ -9,5 +9,10 @@ namespace TAEngine
     internal class Player
     {
         private string playerName;
+
+        public Player(string playerName)
+        {
+            this.playerName = playerName;
+        }
     }
 }

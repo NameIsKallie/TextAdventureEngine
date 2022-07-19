@@ -9,12 +9,13 @@ namespace TAEngine
 {
     public class GameState
     {
-        public GameState(List<string> options)
+        public GameState(int id, List<string> options)
         {
+            this.id = id;
             this.options = options;
         }
         
-        private int id;
+        private int id = 0;
         private List<string> options;
         private List<GameState> gameStates;
 
@@ -24,6 +25,16 @@ namespace TAEngine
             
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Game State " + id);
+            foreach (string option in this.options)
+            {
+                sb.AppendLine("\t" + option);
+            }
+            return sb.ToString();
+        }
 
     }
 }

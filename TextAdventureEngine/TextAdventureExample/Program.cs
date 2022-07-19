@@ -11,16 +11,9 @@ namespace TextAdventureExample
     {
         static void Main(string[] args)
         {
-            List<string> gameState1Options = new List<string>();
-            gameState1Options.Add("Take the left door");
-            gameState1Options.Add("Take the right door");
-
-
-            GameState gameState1 = new GameState(gameState1Options);
-
-            int userInput = gameState1.PromptForChoiceFromOptions();
-
-            Console.WriteLine(userInput);
+            Game game = TAEngine.GameLoader.LoadGame("../../../SampleFile.xml", "Kallie");
+            game.PrintGameStates();
+            Console.ReadKey();
         }
     }
 }
