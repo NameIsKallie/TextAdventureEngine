@@ -9,31 +9,31 @@ namespace TAEngine
     public class Game
     {
         private Player player;
-        private List<GameState> gameStates;
+        private Dictionary<int, GameState> gameStates;
 
         public Game(string playerName)
         {
-            gameStates = new List<GameState>();
+            gameStates = new Dictionary<int, GameState>();
             player = new Player(playerName);
         }
 
-        public void AddGameState(GameState gameState)
+        public void AddGameState(KeyValuePair<int, GameState> gameState)
         {
-            gameStates.Add(gameState);
+            gameStates.Add(gameState.Key, gameState.Value);
         }
-        public void AddGameStates(List<GameState> gameStates)
+        public void AddGameStates(Dictionary<int, GameState> gameStates)
         {
-            foreach (GameState gameState in gameStates)
+            foreach (KeyValuePair<int, GameState> gameState in gameStates)
             {
-                this.gameStates.Add(gameState);
+                this.AddGameState(gameState);
             }
         }
 
         public void PrintGameStates()
         {
-            foreach (GameState gameState in this.gameStates)
+            foreach (KeyValuePair<int, GameState> gameState in this.gameStates)
             {
-                Console.WriteLine(gameState);
+                Console.WriteLine(gameState.Value);
             }
         }
     }

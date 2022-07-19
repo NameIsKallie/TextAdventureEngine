@@ -12,16 +12,17 @@ namespace TAEngine
         public static Game LoadGame(string xmlPath, string playerName)
         {
             Game game = new Game(playerName);
-
-            game.AddGameStates(GenerateGameStates(xmlPath));
+            Dictionary<int, GameState> gameStates = new Dictionary<int, GameState>();
+            GenerateGameStates(xmlPath, ref gameStates);
+            LinkGameStates(xmlPath, ref gameStates);
+            game.AddGameStates(gameStates);
+            
 
             return game;
         }
 
-        private static List<GameState> GenerateGameStates(string xmlPath)
+        private static void GenerateGameStates(string xmlPath, ref Dictionary<int, GameState> gameStates)
         {
-            List<GameState> gameStates = new List<GameState>();
-            
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(xmlPath);
 
@@ -47,13 +48,49 @@ namespace TAEngine
                             }
                         }
                     }
-                    gameStates.Add(new GameState(id, options));
+                    gameStates.Add(id, new GameState(id, options));
                 }
             }
+        }
 
+        private static void LinkGameStates(string xmlPath, ref Dictionary<int, GameState> gameStates)
+        {
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xmlPath);
 
-            return gameStates;
+            foreach (XmlNode stateNode in xDoc.DocumentElement.ChildNodes)
+            {
+                if(stateNode.Name == "GameState")
+                {
+                    int id = 0;
+                    var attribute = stateNode.Attributes["id"];
+                    if(attribute != null)
+                    {
+                        int.TryParse(attribute.Value, out id);
+                    }
+                    foreach (XmlNode node in stateNode)
+                    {
+                        if(node.Name == "LinkedGameStates")
+                        {
+                            GameState gameState;
+                            bool existingState = gameStates.TryGetValue(id, out gameState);
+                            if(existingState)
+                            {
+                                foreach (XmlNode link in node)
+                                {
+                                    int linkID;
+                                    int.TryParse(link.InnerText, out linkID);
+                                    if(linkID != 0)
+                                    {
+                                        gameState.LinkGameState(linkID, ref gameState);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
 
+            }
         }
 
     }
