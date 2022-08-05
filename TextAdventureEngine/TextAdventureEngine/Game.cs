@@ -29,6 +29,35 @@ namespace TAEngine
             }
         }
 
+        public void Play(int begID)
+        {
+            bool gameEnd = false;
+            int curID = begID;
+
+            do
+            {
+                GameState curGameState;
+                if(gameStates.TryGetValue(curID, out curGameState))
+                {
+                    curGameState.PrintMessage();
+                    if (Math.Abs(curID) != curID) 
+                    {
+                        gameEnd = true;
+                    }
+                    else
+                    { 
+                        curID = curGameState.PromptForChoiceFromOptions();
+                    }
+                }
+
+            } while (!gameEnd);
+        }
+
+
+
+
+
+
         public void PrintGameStates()
         {
             foreach (KeyValuePair<int, GameState> gameState in this.gameStates)

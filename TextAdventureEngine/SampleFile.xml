@@ -13,9 +13,9 @@
     </GameState>
     <GameState id='2'>
         <Options>
-            <Option>option 7</Option>
-            <Option>option 8</Option>
-            <Option>option 9</Option>
+            <Option>option 2</Option>
+            <Option>option 1</Option>
+            <Option>option 3</Option>
         </Options>
         <LinkedGameStates>
             <Link>2</Link>
@@ -25,26 +25,38 @@
     </GameState>
 	<GameState id='3'>
 		<Options>
-			<Option>option 5</Option>
-			<Option>option 6</Option>
-			<Option>option 7</Option>
+			<Option>option 4</Option>
+			<Option>option 2</Option>
+			<Option>option 1</Option>
 		</Options>
 		<LinkedGameStates>
-			<Link>3</Link>
+			<Link>4</Link>
 			<Link>2</Link>
 			<Link>1</Link>
 		</LinkedGameStates>
 	</GameState>
 	<GameState id='4'>
 		<Options>
-			<Option>option 9</Option>
-			<Option>option 10</Option>
-			<Option>option 11</Option>
+			<Option>option 2</Option>
+			<Option>option 3</Option>
+			<Option>option -1</Option>
 		</Options>
 		<LinkedGameStates>
 			<Link>2</Link>
 			<Link>3</Link>
+			<Link>-1</Link>
+		</LinkedGameStates>
+	</GameState>
+	<GameState id='-1'>
+		<Options>
+			<Option>option 1</Option>
+			<Option>option 2</Option>
+			<Option>option 3</Option>
+		</Options>
+		<LinkedGameStates>
 			<Link>1</Link>
+			<Link>2</Link>
+			<Link>3</Link>
 		</LinkedGameStates>
 	</GameState>
 </Game>

@@ -44,7 +44,10 @@ namespace TAEngine
                         {
                             foreach (XmlNode option in node)
                             {
-                                options.Add(option.InnerText);
+                                if(option.Name == "Option")
+                                {
+                                    options.Add(option.InnerText);
+                                }
                             }
                         }
                     }
@@ -79,10 +82,11 @@ namespace TAEngine
                                 foreach (XmlNode link in node)
                                 {
                                     int linkID;
-                                    int.TryParse(link.InnerText, out linkID);
-                                    if(linkID != 0)
+                                    if(int.TryParse(link.InnerText, out linkID))
                                     {
-                                        gameState.LinkGameState(linkID, ref gameState);
+                                        GameState linkState;
+                                        bool linkExists = gameStates.TryGetValue(linkID, out linkState);
+                                        gameState.LinkGameState(linkID, ref linkState);
                                     }
                                 }
                             }

@@ -11,8 +11,8 @@ namespace TextAdventureExample
     {
         static void Main(string[] args)
         {
-            Game game = TAEngine.GameLoader.LoadGame("../../../SampleFile.xml", "Kallie");
-            game.PrintGameStates();
+            Game game = GameLoader.LoadGame("../../../SampleFile.xml", "Kallie");
+            game.Play(1);
             Console.ReadKey();
         }
     }

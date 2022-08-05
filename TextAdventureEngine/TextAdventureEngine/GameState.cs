@@ -13,18 +13,30 @@ namespace TAEngine
         private int id = 0;
         private List<string> options;
         private Dictionary<int, GameState> gameStates;
+        private string message;
         
         public GameState(int id, List<string> options)
         {
             this.id = id;
             this.options = options;
             this.gameStates = new Dictionary<int, GameState>();
+            this.message = "GameState: " + id.ToString();
         }
 
+
+        public void PrintMessage()
+        {
+            Console.WriteLine(message);
+        }
         public int PromptForChoiceFromOptions()
         {
-            return CIO.PromptForMenuSelection(options, false);
-            
+            int input = CIO.PromptForMenuSelection(options, false);
+            int gameStateID = 0;
+            if (gameStates.ElementAt(input - 1).Value != null)
+            {
+                gameStateID = gameStates.ElementAt(input - 1).Value.id;
+            }
+            return gameStateID;
         }
 
         public void LinkGameState(int id, ref GameState gameState)
